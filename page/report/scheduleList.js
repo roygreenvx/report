@@ -4,6 +4,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl', 'element',], function 
         layer = layui.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
+        table = layui.table,
         laytpl = layui.laytpl,
         element = layui.element;
 
@@ -16,507 +17,410 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl', 'element',], function 
         elem: '#scheduleList',
         page : true,
         height : "full-145",
-        limit : 20,
+        limit : 10,
         limits: [10, 15, 20, 25],
         loading:true,
         id : "scheduleListTable",
+        //url:"../../testdata/LoadSchedule.json",
+        data:[
+            {
+                "fdShdID": "1",
+                "fdReportType": "1",
+                "fdReportIndex": "1",
+                "fdDefineTime": "2019-01-02 00:00:00.000",
+                "fdReportStartTime": "2018-12-29 00:00:00.000",
+                "fdReportEndTime": "2018-12-29 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "4",
+                "fdResult": "生成PDF失败，其行业名称【农业】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【建筑】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【房地产】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【外贸】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【科技金融】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【融资租赁】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【港口】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【高速铁路】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【公路运输】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【航空运输】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【石油天然气】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【煤炭】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【电力】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新能源】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【核电】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【建材】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【钢铁】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【有色】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【石化】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【化工】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【船舶】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【机械】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【工程机械】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【电力设备】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【通信设备】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【电子信息】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【人工智能】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新型显示】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【汽车】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【轻工】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【纺织】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【医药】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【食品】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【家电】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【批发零售】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【物流】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【旅游】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【教育培训】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【文化传媒】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【游戏产业】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【软件产业】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【移动互联网】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新材料】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【生物产业】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【生态环保】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【海洋经济】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【高端装备】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【数字创意】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新能源汽车】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新一代信息技术】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  ",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.013",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "2",
+                "fdReportType": "1",
+                "fdReportIndex": "2",
+                "fdDefineTime": "2019-01-03 00:00:00.000",
+                "fdReportStartTime": "2019-01-02 00:00:00.000",
+                "fdReportEndTime": "2019-01-02 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "4",
+                "fdResult": "生成PDF失败，其行业名称【数字创意】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新能源汽车】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  生成PDF失败，其行业名称【新一代信息技术】类型为【2】，失败原因是：正在分析“+”－ 限定符 {x,y} 前没有任何内容。！  ",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.017",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "3",
+                "fdReportType": "1",
+                "fdReportIndex": "3",
+                "fdDefineTime": "2019-01-04 00:00:00.000",
+                "fdReportStartTime": "2019-01-03 00:00:00.000",
+                "fdReportEndTime": "2019-01-03 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.017",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "4",
+                "fdReportType": "1",
+                "fdReportIndex": "4",
+                "fdDefineTime": "2019-01-07 00:00:00.000",
+                "fdReportStartTime": "2019-01-04 00:00:00.000",
+                "fdReportEndTime": "2019-01-04 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.020",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "5",
+                "fdReportType": "1",
+                "fdReportIndex": "5",
+                "fdDefineTime": "2019-01-08 00:00:00.000",
+                "fdReportStartTime": "2019-01-07 00:00:00.000",
+                "fdReportEndTime": "2019-01-07 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.020",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "6",
+                "fdReportType": "1",
+                "fdReportIndex": "6",
+                "fdDefineTime": "2019-01-09 00:00:00.000",
+                "fdReportStartTime": "2019-01-08 00:00:00.000",
+                "fdReportEndTime": "2019-01-08 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.023",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "7",
+                "fdReportType": "1",
+                "fdReportIndex": "7",
+                "fdDefineTime": "2019-01-10 00:00:00.000",
+                "fdReportStartTime": "2019-01-09 00:00:00.000",
+                "fdReportEndTime": "2019-01-09 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.023",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "8",
+                "fdReportType": "1",
+                "fdReportIndex": "8",
+                "fdDefineTime": "2019-01-11 00:00:00.000",
+                "fdReportStartTime": "2019-01-10 00:00:00.000",
+                "fdReportEndTime": "2019-01-10 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.027",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "9",
+                "fdReportType": "1",
+                "fdReportIndex": "9",
+                "fdDefineTime": "2019-01-14 00:00:00.000",
+                "fdReportStartTime": "2019-01-11 00:00:00.000",
+                "fdReportEndTime": "2019-01-11 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.030",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "10",
+                "fdReportType": "1",
+                "fdReportIndex": "10",
+                "fdDefineTime": "2019-01-15 00:00:00.000",
+                "fdReportStartTime": "2019-01-14 00:00:00.000",
+                "fdReportEndTime": "2019-01-14 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.030",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "11",
+                "fdReportType": "1",
+                "fdReportIndex": "11",
+                "fdDefineTime": "2019-01-16 00:00:00.000",
+                "fdReportStartTime": "2019-01-15 00:00:00.000",
+                "fdReportEndTime": "2019-01-15 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.033",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "12",
+                "fdReportType": "1",
+                "fdReportIndex": "12",
+                "fdDefineTime": "2019-01-17 00:00:00.000",
+                "fdReportStartTime": "2019-01-16 00:00:00.000",
+                "fdReportEndTime": "2019-01-16 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.033",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "13",
+                "fdReportType": "1",
+                "fdReportIndex": "13",
+                "fdDefineTime": "2019-01-18 00:00:00.000",
+                "fdReportStartTime": "2019-01-17 00:00:00.000",
+                "fdReportEndTime": "2019-01-17 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.037",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "14",
+                "fdReportType": "1",
+                "fdReportIndex": "14",
+                "fdDefineTime": "2019-01-21 00:00:00.000",
+                "fdReportStartTime": "2019-01-18 00:00:00.000",
+                "fdReportEndTime": "2019-01-18 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.040",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "15",
+                "fdReportType": "1",
+                "fdReportIndex": "15",
+                "fdDefineTime": "2019-01-22 00:00:00.000",
+                "fdReportStartTime": "2019-01-21 00:00:00.000",
+                "fdReportEndTime": "2019-01-21 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.040",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "16",
+                "fdReportType": "1",
+                "fdReportIndex": "16",
+                "fdDefineTime": "2019-01-23 00:00:00.000",
+                "fdReportStartTime": "2019-01-22 00:00:00.000",
+                "fdReportEndTime": "2019-01-22 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.043",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "17",
+                "fdReportType": "1",
+                "fdReportIndex": "17",
+                "fdDefineTime": "2019-01-24 00:00:00.000",
+                "fdReportStartTime": "2019-01-23 00:00:00.000",
+                "fdReportEndTime": "2019-01-23 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.050",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "18",
+                "fdReportType": "1",
+                "fdReportIndex": "18",
+                "fdDefineTime": "2019-01-25 00:00:00.000",
+                "fdReportStartTime": "2019-01-24 00:00:00.000",
+                "fdReportEndTime": "2019-01-24 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.050",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "19",
+                "fdReportType": "1",
+                "fdReportIndex": "19",
+                "fdDefineTime": "2019-01-28 00:00:00.000",
+                "fdReportStartTime": "2019-01-25 00:00:00.000",
+                "fdReportEndTime": "2019-01-25 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.050",
+                "fdNote": ""
+            },
+            {
+                "fdShdID": "20",
+                "fdReportType": "1",
+                "fdReportIndex": "20",
+                "fdDefineTime": "2019-01-29 00:00:00.000",
+                "fdReportStartTime": "2019-01-28 00:00:00.000",
+                "fdReportEndTime": "2019-01-28 00:00:00.000",
+                "fdFinishTime": "NULL",
+                "fdState": "2",
+                "fdResult": "",
+                "fdReTryInfo": "",
+                "fdUpdateID": "fxy20190122",
+                "fdUpdateTime": "2019-02-19 14:36:02.050",
+                "fdNote": ""
+            }
+        ],
         cols : [[
             {field: 'fdShdID', title: 'ID', align:"center"},
-            {field: 'fdState', title: '生成状态',  align:'center' ,event: 'change-fdimportance',templet:function(d){
+            {field: 'fdState', title: '生成状态',  align:'center' ,templet:function(d){
                 var flag="";
-                if(d.fdimportance=='1'){
-                    flag="未设置";
-                }else if(d.fdimportance=='2'){
-                    flag="优良";
-                }else if(d.fdimportance=='3'){
-                    flag="不良";
+                if(d.fdState=='1'){
+                    flag="等待生成";
+                }else if(d.fdState=='2'){
+                    flag="生成成功";
+                }else if(d.fdState=='3'){
+                    flag="删除";
+                }else if(d.fdState=='4'){
+                    flag="<span style='color:red;font-weight: bold;'>生成失败</span>";
+                }else if(d.fdState=='5'){
+                    flag="失败重发";
                 }else {
                     flag="未设置";
                 }
                 return flag;
             }},
-            {field: 'fdarticletitle', title: '名称', width:350},
-            //{field: 'fdareaname', title: '地区', align:'center',event:'change-fdarea'},
-            { field: 'fdareaname', title: '地区', align: 'center', toolbar: '<div><span lay-event="change-fdarea">{{d.fdareaname}}</span></div>' },
-            {field: 'fdpublishtime', title: '发布时间', align:'center',event: 'change-fdpublishtime', minWidth:110, templet:function(d){
-                return d.fdpublishtime.substring(0,10);
-            }},
-            {field: 'fdimportance', title: '正负面',  align:'center' ,event: 'change-fdimportance',templet:function(d){
+            {field: 'fdReportType', title: '报告类型',  align:'center' ,templet:function(d){
                 var flag="";
-                if(d.fdimportance=='1'){
-                    flag="未设置";
-                }else if(d.fdimportance=='2'){
-                    flag="优良";
-                }else if(d.fdimportance=='3'){
-                    flag="不良";
+                if(d.fdReportType=='1'){
+                    flag="工行日报";
+                }else if(d.fdReportType=='2'){
+                    flag="工行周报";
+                }else if(d.fdReportType=='3'){
+                    flag="开行周报";
                 }else {
                     flag="未设置";
                 }
                 return flag;
             }},
-            {field: 'fdapproveflag', title: '审核',event: 'change-fdapproveflag',  align:'center',templet:function(d){
-                var flag="";
-                if(d.fdapproveflag=='0'){
-                    flag="未审核";
-                }else if(d.fdapproveflag=='1'){
-                    flag="未审核";
-                }else if(d.fdapproveflag=='2'){
-                    flag="审核通过";
-                }else if(d.fdapproveflag=='3'){
-                    flag="审核未通过";
-                }else if(d.fdapproveflag=='4'){
-                    flag="待审核";
-                }else if(d.fdapproveflag=='5'){
-                    flag="待编辑";
-                }else if(d.fdapproveflag=='7'){
-                    flag="编辑完";
+            //{field: 'fdReportIndex', title: '索引号'},
+            {field: 'fdDefineTime', title: '预订生成时间'},
+            {field: 'fdReportStartTime', title: '开始时间'},
+            {field: 'fdReportEndTime', title: '结束时间'},
+            {field: 'fdFinishTime', title: '完成时间'},
+            {field: 'fdResult', title: '生成结果',templet:function(d){
+                if(d.fdState=='4'){
+                    return "<div><span style='text-decoration: underline;' lay-event='show-fdResult'>错误信息</span></div>";
                 }else {
-                    flag="未审核";
+                    return "";
                 }
-                return flag;
             }},
-            //{field: 'fdchannel', title: '所属栏目', align:'center',event:'change-fdchannel'},
-            { field: 'fdchannel', title: '所属栏目', align: 'center', toolbar: '<div><span lay-event="change-fdchannel">{{d.fdchannel}}</span></div>' },
-            {field: 'ischange', title: '是否修改', hide:true},
-            // {field: 'newsTop', title: '是否置顶', align:'center', templet:function(d){
-            //     return '<input type="checkbox" name="newsTop" lay-filter="newsTop" lay-skin="switch" lay-text="是|否" '+d.newsTop+'>'
-            // }},
+            {field: 'fdUpdateTime', title: '最后修改时间'},
+            {field: 'fdNote', title: '备注'},
         ]]
     });
 
      //列表操作
-     table.on('tool(newsList)', function(obj){
+     table.on('tool(scheduleList)', function(obj){
         var layEvent = obj.event,
             data = obj.data;
 
-        if(layEvent === 'edit'){ //编辑
-            addNews(data);
-        } else if(layEvent === 'del'){ //删除
-            layer.confirm('确定删除此文章？',{icon:3, title:'提示信息'},function(index){
-                // $.get("删除文章接口",{
-                //     newsId : data.newsId  //将需要删除的newsId作为参数传入
-                // },function(data){
-                    tableIns.reload();
-                    layer.close(index);
-                // })
+        if(layEvent === 'show-fdResult'){ //编辑
+            var resultsplit=data.fdResult.split("  ");
+            var resultarray=[];
+            for(var i=0;i<resultsplit.length-1;i++){
+                var objtemp={};
+                objtemp.id=i;
+                objtemp.txt=resultsplit[i];
+                resultarray.push(objtemp);
+            }
+            var tableIns = table.render({
+                elem: '#fdResultList',
+                page : true,
+                height : "480",
+                limit : 10,
+                limits: [10, 15, 20, 25],
+                id : "fdResultListTable",
+                //url:"../../testdata/LoadSchedule.json",
+                data:resultarray,
+                cols : [[
+                    {type:'numbers', align:"center"},
+                    {field: 'txt', title: '错误信息'},
+                ]]
             });
-        } else if(layEvent === 'look'){ //预览
-            layui.layer.open({
-                type: 2,
-                title: false,
-                //skin: 'layer-attupload',
-                area: ['850px', '500px'],
-                //btn: ['确定'],
-                //btnAlign: 'c',
-                content: '../../Modules/NewDetail.aspx?id=' + data.fdid,
-            });
-        }else if (layEvent=='change-fdimportance'){//正负面修改
-            var offsettop=$(this).offset().top+'px';
-            var offsetleft=$(this).offset().left+'px';
             layer.open({
                 type:1,
                 title: false,
-                btn: ['确定', '取消'],
-                btnAlign: 'c',
-                closeBtn:0,
-                skin: 'layer-overflow',
-                offset: [offsettop, offsetleft],
-                content: $("#div-zhengfumian"),
-                success:function(){
-                    form.val('form-zhengfumian',{
-                        'select-zhengfumian':data.fdimportance
-                    })
-                },
-                yes:function(index,layerdom){
-                    obj.update({
-                        ischange: 1,
-                        fdimportance:layerdom.find('select').val()
-                    });
-                    layer.close(index);
-                }
+                area: ['800px','500px'],
+                content: $("#div-fdResult"),
             });  
-        }else if (layEvent=='change-fdapproveflag'){//审核状态修改
-            var offsettop=$(this).offset().top+'px';
-            var offsetleft=$(this).offset().left+'px';
-            layer.open({
-                type:1,
-                title: false,
-                btn: ['确定', '取消'],
-                btnAlign: 'c',
-                closeBtn:0,
-                skin: 'layer-overflow',
-                offset: [offsettop, offsetleft],
-                content: $("#div-fdapproveflag"),
-                success:function(){
-                    form.val('form-fdapproveflag',{
-                        'select-fdapproveflag':data.fdapproveflag
-                    })
-                },
-                yes:function(index,layerdom){
-                    obj.update({
-                        ischange: 1,
-                        fdapproveflag:layerdom.find('select').val()
-                    });
-                    layer.close(index);
-                }
-            });  
-        }else if (layEvent=='change-fdpublishtime'){//发布时间修改
-            var offsettop=$(this).offset().top+'px';
-            var offsetleft=$(this).offset().left+'px';
-            layer.open({
-                type:1,
-                title: false,
-                btn: ['确定', '取消'],
-                //area:['280px','330px'],
-                btnAlign: 'c',
-                closeBtn:0,
-                skin: 'layer-overflow',
-                offset: [offsettop, offsetleft],
-                content: $("#div-fdpublishtime"),
-                success:function(layero, index){
-                    laydate.render({
-                        elem: '#div-fdpublishtime input',
-                        //elem: '#div-fdpublishtime div',
-                        show:true,
-                        value: data.fdpublishtime.substring(0,10)
-                    });
-                },
-                yes:function(index,layerdom){
-                    obj.update({
-                        ischange: 1,
-                        fdpublishtime:layerdom.find('input').val()
-                    });
-                    layer.close(index);
-                }
-            });  
-        }else if (layEvent=='change-fdarea'){//发布地区修改
-            var offsettop=$(this).offset().top+'px';
-            var offsetleft=$(this).offset().left+'px';
-            layer.open({
-                type:1,
-                title: false,
-                btn: ['确定', '取消'],
-                //area:['280px','330px'],
-                btnAlign: 'c',
-                closeBtn:0,
-                skin: 'layer-overflow',
-                offset: [offsettop, offsetleft],
-                content: $("#div-fdarea"),
-                success:function(layero, index){
-                    //table.reload("fdareaListTable");
-                    //$(".tableSelect").css("z-index", $(".layui-layer").css("z-index"));
-                },
-                yes:function(index,layerdom){
-                    obj.update({
-                        ischange: 1,
-                        fdarea: formSelects.value('select-fdarea', 'valStr'),
-                        fdareaname: formSelects.value('select-fdarea', 'nameStr')
-                    });
-                    layer.close(index);
-                },
-                end: function () {
-                    formSelects.value('select-fdarea', []);
-                }
-            });  
-        }else if (layEvent=='change-fdchannel'){//栏目修改
-            var offsettop = $(this).offset().top;
-            if (offsettop + 103 > $(window).height()) {
-                offsettop = $(window).height() - 103 + 'px';
-            }
-            else {
-                offsettop = offsettop + 'px';
-            }
-            var offsetleft = $(this).offset().left;
-            if (offsetleft + 300 > $(window).width()) {
-                offsetleft = $(window).width() - 300 + 'px';
-            }
-            else {
-                offsetleft = offsetleft + 'px';
-            }
-            layer.open({
-                type:1,
-                title: false,
-                btn: ['确定', '取消'],
-                //area:['280px','330px'],
-                btnAlign: 'c',
-                closeBtn:0,
-                skin: 'layer-overflow',
-                offset: [offsettop, offsetleft],
-                content: $("#div-fdchannel"),
-                success:function(layero, index){
-                    //$(".tableSelect").css("z-index", $(".layui-layer").css("z-index"));
-                },
-                yes:function(index,layerdom){
-                    obj.update({
-                        ischange: 1,
-                        fdchannelid: formSelects.value('select-fdchannel', 'valStr'),
-                        fdchannel: formSelects.value('select-fdchannel', 'nameStr')
-                    });
-                    layer.close(index);
-                },
-                end: function () {
-                    formSelects.value('select-fdchannel', []);
-                }
-            });  
-        }
+        }  
     });
 
-    tableSelect.render({
-		elem: '#select-infosource',
-		searchKey: 'key',
-		searchPlaceholder: '',
-		table: {
-		    url: '../../DataServer/GetChannelAjax.aspx?method=searchInfosource&sortOrder=',
-		    width: 380,
-		    height: 260,
-            request: {
-                pageName: 'pageIndex', //页码的参数名称，默认：page
-                limitName: 'pageSize' //每页数据量的参数名，默认：limit
-            },
-            parseData: function(res){
-                return{
-                    "code": 0, //解析接口状态
-                    "msg": '', //解析提示文本
-                    "count": res.total, //解析数据长度
-                    "data": res.data //解析数据列表
-                };
-            },
-			cols: [[
-                { type: 'checkbox' },
-                { field: 'text', title: '信源名称' },
-			]]
-		},
-		done: function (elem, data) {
-			var NEWJSON = []
-			layui.each(data.data, function (index, item) {
-				NEWJSON.push(item.text)
-			});
-			elem.val(NEWJSON.join(","));
-		}
-    });
-
-    formSelects.data('select-fdarea', 'server', {
-        url: '../../DataServer/GetCityAajax.aspx?method=GetCityDataByfdidJson',
-    }).btns('select-fdarea', ['remove']);
-
-    formSelects.data('select-fdchannel', 'server', {
-        url: '../../DataServer/GetChannelAjax.aspx?method=LoadChannelAllTagJsonNew',
-    }).btns('select-fdchannel', ['remove']);
-
-    cascader({
-        elem: "#select-tree",
-        //data: data,
-        url: "../../DataServer/GetChannelAjax.aspx?method=LoadTChannelNodesJson",
-        // type: "post",
-        // triggerType: "change",
-        // showLastLevels: true,
-        // where: {
-        //     a: "aaa"
-        // },
-        //value: ["A", "AA1"],
-        success: function (valData, labelData) {
-            //console.log(valData);
-            $("#select-tree").attr('fdnodeid', valData[valData.length-1]);
-        }
-    });
-
-    //tableSelect.render({
-    //    elem: '#div-fdarea input',
-    //    searchKey: 'key',
-    //    searchPlaceholder: '',
-    //    table: {
-    //        //id : "fdareaListTable",
-    //        url:'../../DataServer/GetCityAajax.aspx?method=GetCitySearchListJson',
-    //        //url:'../../testdata/LoadNews.json',
-    //        page:false,
-    //        width:380,
-    //        height:260,
-    //        parseData: function(res){
-    //            return{
-    //                "code": 0, //解析接口状态
-    //                "msg": '', //解析提示文本
-    //                "count": res.total, //解析数据长度
-    //                "data": res.data //解析数据列表
-    //            };
-    //        },
-    //        cols: [[
-    //            { type: 'radio' },
-    //            { field: 'rfdname', title: '地区' },
-    //            { field: 'rfdid', title: '编码' },
-    //        ]]
-    //    },
-    //    done: function (elem, data) {
-    //        if(data.data.length>0){
-    //            elem.attr('areaid',data.data[0].rfdid);
-    //            elem.val(data.data[0].rfdname);
-    //        }
-    //    }
-    //});
-
-    //tableSelect.render({
-    //    elem: '#div-fdchannel input',
-    //    searchKey: 'key',
-    //    searchPlaceholder: '',
-    //    table: {
-    //        //id : "fdchannelListTable",
-    //        url:'../../DataServer/GetChannelAjax.aspx?method=LoadChannelAllTagJson',
-    //        //url:'../../testdata/LoadNews.json',
-    //        page:false,
-    //        width:380,
-    //        height:260,
-    //        parseData: function(res){
-    //            return{
-    //                "code": 0, //解析接口状态
-    //                "msg": '', //解析提示文本
-    //                "count": res.total, //解析数据长度
-    //                "data": res.data //解析数据列表
-    //            };
-    //        },
-    //        cols: [[
-    //            { type: 'radio' },
-    //            { field: 'fdname', title: '栏目' },
-    //            { field: 'fdid', title: 'ID' },
-    //        ]]
-    //    },
-    //    done: function (elem, data) {
-    //        if(data.data.length>0){
-    //            elem.attr('channelid',data.data[0].fdid);
-    //            elem.val(data.data[0].fdname);
-    //        }
-    //    }
-    //});
     
-    laydate.render({
-        elem: '#select-tfdpublishtimebegin'
-    });
+    
+    // laydate.render({
+    //     elem: '#select-tfdpublishtimebegin'
+    // });
 
-    laydate.render({
-        elem: '#select-tfdpublishtimeend'
-    });
+    // laydate.render({
+    //     elem: '#select-tfdpublishtimeend'
+    // });
 
-    //地区选择
-    //加载省份方法
-    function AreaCity_load() {
-        $.ajax({
-            url: "../../DataServer/GetCityAajax.aspx?method=GetAreaList",
-            type: "Post",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                //debugger;
-                var ddl = $(".select-sheng");
-                //删除节点
-                $(".select-sheng option").remove();
-                ddl.append("<option value=''>不限(省份)</option>");
-                //重新添加
-                $.each(data, function (i, n) {
-                    var opt = $("<option></option>").text(data[i].fdareaname).val(data[i].fdareacode);
-                    ddl.append(opt);
-                });
-                //重新渲染控件
-                form.render('select');
-            },
-            error: function (data) {
-                //alert("Error");
-            }
-        });
-    }
-    //地级市
-    form.on('select(select-sheng)',function(data){
-        var id = data.value;
-        $.ajax({
-            url: "../../DataServer/GetCityAajax.aspx?method=GetAreaList&id=" + id,
-            type: "Post",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                //debugger;
-                var ddl = $(".select-shi");
-                //删除节点
-                $(".select-shi option").remove();
-                ddl.append("<option value=''>不限(地级市)</option>");
-                ddl.append("<option value='0'>全部下属地区</option>");
-                ddl.append("<option value='-2'>其他</option>");
-                $(".select-quxian option").remove();
-                $(".select-quxian").html("<option value=''>不限(县级市)</option>");
-                //重新添加
-                $.each(data, function (i, n) {
-                    var opt = $("<option></option>").text(data[i].fdareaname).val(data[i].fdareacode);
-                    ddl.append(opt);
-                });
-                //重新渲染控件
-                form.render('select');
-            },
-            error: function (data) {
-                //alert("Error");
-            }
-        });
-    })
-    //县级市
-    form.on('select(select-shi)',function(data){
-        var id = data.value;
-        if (id == -2) { id = $(".select-sheng").val(); }
-        $.ajax({
-            url: "../../DataServer/GetCityAajax.aspx?method=GetAreaListXian&id=" + id,
-            type: "Post",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                var ddl = $(".select-quxian");
-                //删除节点
-                $(".select-quxian option").remove();
-                ddl.html("<option value=''>不限(县级市)</option>");
-                //重新添加
-                $.each(data, function (i, n) {
-                    var opt = $("<option></option>").text(data[i].fdareaname).val(data[i].fdareacode);
-                    ddl.append(opt);
-                })
-                //重新渲染控件
-                form.render('select');
-            },
-            error: function (data) {
-                //alert("Error");
-            }
-        });
-    })
-
-    //加载编辑人员
-    function BackUserload() {
-        $.ajax({
-            url: "../../DataServer/TreeData.aspx?method=GetBackUser",
-            type: "Post",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                var editor_ddl = $(".select-editor");
-                var approver_ddl = $(".select-approver");
-                $.each(data, function (i, n) {
-                    var opt = $("<option></option>").text(data[i].Fdusername).val(data[i].Fdusername);
-                    var opt2 = $("<option></option>").text(data[i].Fdusername).val(data[i].Fdusername);
-                    editor_ddl.append(opt);
-                    approver_ddl.append(opt2);
-                })
-                form.render('select');
-            },
-            error: function (data) {
-                alert("Error");
-            }
-        });
-    }
-
-
-    //是否置顶
-    form.on('switch(newsTop)', function(data){
-        var index = layer.msg('修改中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            layer.close(index);
-            if(data.elem.checked){
-                layer.msg("置顶成功！");
-            }else{
-                layer.msg("取消置顶成功！");
-            }
-        },500);
-    })
+    
 
     //搜索
     $(".search_btn").on("click",function(){
@@ -579,210 +483,5 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl', 'element',], function 
         //     layer.msg("请输入搜索的内容");
         // }
     });
-
-
-    //添加文章
-    function addNews(edit) {
-        var index = layer.open({
-            title: "添加文章",
-            type: 2,
-            content: "newsAdd.html",
-            success: function (layero, index) {
-                var body = layer.getChildFrame('body', index);
-                if (edit) {
-                    body.find("#fdid").val(edit.fdid);
-                    // body.find(".newsName").val(edit.newsName);
-                    // body.find(".abstract").val(edit.abstract);
-                    // body.find(".thumbImg").attr("src",edit.newsImg);
-                    // body.find("#news_content").val(edit.content);
-                    // body.find(".newsStatus select").val(edit.newsStatus);
-                    // body.find(".openness input[name='openness'][title='"+edit.newsLook+"']").prop("checked","checked");
-                    // body.find(".newsTop input[name='newsTop']").prop("checked",edit.newsTop);
-                    // form.render();
-                }
-                setTimeout(function () {
-                    layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
-                        tips: 3
-                    });
-                }, 500)
-            },
-
-        })
-        layer.full(index);
-        //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
-        $(window).on("resize", function () {
-            layer.full(index);
-        })
-    }
-    $(".addNews_btn").click(function () {
-        addNews();
-    })
-
-    //批量删除
-    $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('newsListTable'),
-            data = checkStatus.data;
-        if (data.length > 0) {
-            layer.confirm('确定删除选中的文章？', { icon: 3, title: '提示信息' }, function (index) {
-                $.ajax({
-                    url: "../../DataServer/TreeData.aspx?method=SaveNews",
-                    data: { data: data },
-                    type: "post",
-                    dataType: 'json',
-                    success: function (result) {
-                        layer.close(index);
-                        if (result != "" && JSON.parse(result).iserror) {
-                            alert(JSON.parse(result).responseText);
-                        } else {
-                            //top.layer.msg("保存成功！");
-                            tableIns.reload();
-                        }
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        alert(jqXHR.responseText);
-                    }
-                });
-            })
-        } else {
-            layer.msg("请选择需要删除的文章");
-        }
-    })
-
-    //保存列表中的修改
-    $("#btn_saveNews").on('click',function(){
-        debugger;
-        var data = layui.table.cache.newsListTable.filter(function(item){
-            return item.ischange=='1'
-        });
-        //alert(data);
-        //var json = mini.encode(data);
-
-        //alert(json);
-        if (data.length > 0) {
-            //grid.loading("保存中，请稍后......");
-            //alert(data.length);
-            $.ajax({
-                url: "../../DataServer/TreeData.aspx?method=SaveNews",
-                data: { data: JSON.stringify(data) },
-                type: "post",
-                success: function (result) {
-                    //alert(text);
-                    //var o = mini.decode(text);
-                    if (result!="" && JSON.parse(result).iserror) {
-                        alert(JSON.parse(result).responseText);
-                    } else {
-                        top.layer.msg("保存成功！");
-                        table.reload('newsListTable');
-                    }
-
-                    //grid.reload();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                }
-            });
-        }else{
-            alert("没有已修改的数据");
-        }
-    });
-
-
-    //待编辑按钮
-    $("#btn_unedited").on('click', function () {
-        var checkStatus = table.checkStatus('newsListTable'),
-            data = checkStatus.data;
-        if (data.length > 0) {
-            $.ajax({
-                url: "../../DataServer/TreeData.aspx?method=PendingEditedData",
-                data: { data: JSON.stringify(data) },
-                type: "post",
-                success: function (result) {
-                    //alert(text);
-                    //var o = mini.decode(text);
-                    if (result != "" && JSON.parse(result).iserror) {
-                        alert(JSON.parse(result).responseText);
-                    } else {
-                        top.layer.msg("修改成功！");
-                        table.reload('newsListTable');
-                    }
-
-                    //grid.reload();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                }
-            });
-        } else {
-            alert("请选择需要改为待编辑状态的文章！");
-        }
-    });
-
-
-    //审核通过按钮
-    $("#btn_approved").on('click', function () {
-        var checkStatus = table.checkStatus('newsListTable'),
-            data = checkStatus.data;
-        if (data.length > 0) {
-            $.ajax({
-                url: "../../DataServer/TreeData.aspx?method=ApprovedNews",
-                data: { data: JSON.stringify(data) },
-                type: "post",
-                success: function (result) {
-                    //alert(text);
-                    //var o = mini.decode(text);
-                    if (result != "" && JSON.parse(result).iserror) {
-                        alert(JSON.parse(result).responseText);
-                    } else {
-                        top.layer.msg("修改成功！");
-                        table.reload('newsListTable');
-                    }
-
-                    //grid.reload();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                }
-            });
-        } else {
-            alert("请选择审核通过的文章！");
-        }
-    });
-
-
-    //审核不通过按钮
-    $("#btn_unapproved").on('click', function () {
-        var checkStatus = table.checkStatus('newsListTable'),
-            data = checkStatus.data;
-        if (data.length > 0) {
-            $.ajax({
-                url: "../../DataServer/TreeData.aspx?method=UnApprovedNews",
-                data: { data: JSON.stringify(data) },
-                type: "post",
-                success: function (result) {
-                    //alert(text);
-                    //var o = mini.decode(text);
-                    if (result != "" && JSON.parse(result).iserror) {
-                        alert(JSON.parse(result).responseText);
-                    } else {
-                        top.layer.msg("修改成功！");
-                        table.reload('newsListTable');
-                    }
-
-                    //grid.reload();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                }
-            });
-        } else {
-            alert("请选择审核通过的文章！");
-        }
-    });
-
-    
-
-    
-
-   
 
 })
