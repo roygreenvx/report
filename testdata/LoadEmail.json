@@ -1,0 +1,26 @@
+[
+    {
+        "fdReportType": "1",
+        "fdEmailTO": "information@icbc.com.cn",
+        "fdEmailCC": "shuang.yang@icbc.com.cn,dong.zhang@icbc.com.cn,dianpeng.qi@icbc.com.cn,huiyuan.liu@icbc.com.cn,zhen.fan@icbc.com.cn,ceicyzx@163.com",
+        "fdUpdateID": "fxy20190222",
+        "fdUpdateTime": "2019-02-22 13:34:04.950",
+        "fdNote": ""
+    },
+    {
+        "fdReportType": "2",
+        "fdEmailTO": "ceicyzx@163.com",
+        "fdEmailCC": "fuxuyuan@cei.gov.cn",
+        "fdUpdateID": "fxy20190222",
+        "fdUpdateTime": "2019-02-22 13:35:05.720",
+        "fdNote": ""
+    },
+    {
+        "fdReportType": "3",
+        "fdEmailTO": "yyz@cei.gov.cn",
+        "fdEmailCC": "yyz@cei.gov.cn",
+        "fdUpdateID": "fxy20190222",
+        "fdUpdateTime": "2019-02-22 13:35:05.720",
+        "fdNote": ""
+    }
+]
